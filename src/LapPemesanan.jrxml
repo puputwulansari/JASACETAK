@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="401955e5-4f07-4f66-9bb3-194cff1554af">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tabel_pemesanan.`kode_pemesanan` AS tabel_pemesanan_kode_pemesanan,
+     tabel_pemesanan.`kode_pegawai` AS tabel_pemesanan_kode_pegawai,
+     tabel_pemesanan.`kode_pelanggan` AS tabel_pemesanan_kode_pelanggan,
+     tabel_pemesanan.`kode_produk` AS tabel_pemesanan_kode_produk,
+     tabel_pemesanan.`produk` AS tabel_pemesanan_produk,
+     tabel_pemesanan.`harga` AS tabel_pemesanan_harga,
+     tabel_pemesanan.`jumlah` AS tabel_pemesanan_jumlah,
+     tabel_pemesanan.`total` AS tabel_pemesanan_total,
+     tabel_pemesanan.`dp` AS tabel_pemesanan_dp,
+     tabel_pemesanan.`sisa` AS tabel_pemesanan_sisa
+FROM
+     `tabel_pemesanan` tabel_pemesanan]]>
+	</queryString>
+	<field name="tabel_pemesanan_kode_pemesanan" class="java.lang.String"/>
+	<field name="tabel_pemesanan_kode_pegawai" class="java.lang.String"/>
+	<field name="tabel_pemesanan_kode_pelanggan" class="java.lang.String"/>
+	<field name="tabel_pemesanan_kode_produk" class="java.lang.String"/>
+	<field name="tabel_pemesanan_produk" class="java.lang.String"/>
+	<field name="tabel_pemesanan_harga" class="java.lang.Integer"/>
+	<field name="tabel_pemesanan_jumlah" class="java.lang.Integer"/>
+	<field name="tabel_pemesanan_total" class="java.lang.Integer"/>
+	<field name="tabel_pemesanan_dp" class="java.lang.Integer"/>
+	<field name="tabel_pemesanan_sisa" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="263" height="62" uuid="600c2b71-1e99-4a90-b374-1cdca48a6548"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[LAPORAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="219" y="62" width="196" height="22" uuid="0a604026-fba4-4e5a-9662-faf2d8508240"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[DATA PEMESANAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="1aaf7f3f-5e7f-4bc2-b370-29f36d35726f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="55" height="15" forecolor="#736343" uuid="c511cdc2-d5da-453b-a511-4b0458f8e070"/>
+				<text><![CDATA[KODE PEMESANAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="55" y="0" width="55" height="15" forecolor="#736343" uuid="61e75fab-2143-49e2-88d0-3373659985ed"/>
+				<text><![CDATA[KODE PEGAWAU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="110" y="0" width="55" height="15" forecolor="#736343" uuid="20ed73d7-5963-434e-b9b5-16e240f032d7"/>
+				<text><![CDATA[KODE PELANGGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="165" y="0" width="55" height="15" forecolor="#736343" uuid="3bfa461a-5554-4e3a-8c42-44b4543fc297"/>
+				<text><![CDATA[KODE PRODUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="220" y="0" width="55" height="15" forecolor="#736343" uuid="1ffc7c92-89ff-4be0-bd57-2d3e25da8a8a"/>
+				<text><![CDATA[PRODUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="275" y="0" width="55" height="15" forecolor="#736343" uuid="59959952-d807-424b-924c-50cb465077f6"/>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="330" y="0" width="55" height="15" forecolor="#736343" uuid="6a61c19e-dc1f-4013-8d24-673e9e0b5632"/>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="385" y="0" width="55" height="15" forecolor="#736343" uuid="5b76d718-992e-474c-badd-fa96114b739f"/>
+				<text><![CDATA[SUB TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="440" y="0" width="55" height="15" forecolor="#736343" uuid="90e57dc5-7e57-4d60-b14c-c6e8a209a63a"/>
+				<text><![CDATA[DP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="495" y="0" width="55" height="15" forecolor="#736343" uuid="1bdbac10-72f9-4fab-8716-1014a70ce344"/>
+				<text><![CDATA[tabel_pemesanan_sisa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="d2a901ce-7b73-4468-b113-4c5432db8b9e"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="55" height="15" uuid="5ff23fc2-fad7-4e48-ad8a-7adbef8edbbc"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_kode_pemesanan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="55" y="0" width="55" height="15" uuid="49600f31-da5f-4077-b11a-164adba20625"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_kode_pegawai}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="110" y="0" width="55" height="15" uuid="2bb49007-b202-4335-8300-fed2f3a7ef3f"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_kode_pelanggan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="165" y="0" width="55" height="15" uuid="12129f61-16db-4364-aa44-36e25bdf562f"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_kode_produk}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="220" y="0" width="55" height="15" uuid="38124fa3-6e87-4327-85d2-d6c7437c1a5e"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_produk}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="275" y="0" width="55" height="15" uuid="5c898100-805e-4945-a085-01c3cc5cb11b"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_harga}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="330" y="0" width="55" height="15" uuid="ca6fc2af-e075-47d6-99ce-b422aa3549a2"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_jumlah}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="385" y="0" width="55" height="15" uuid="4e7ea92f-a4ef-4946-bba1-20f7c5a24fa7"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_total}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="440" y="0" width="55" height="15" uuid="ce9a9ece-9ef8-4e94-bf95-e9f077ad36a5"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_dp}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="495" y="0" width="55" height="15" uuid="fd3ce570-0f2c-45ca-ba5a-3a88f5e8fd1e"/>
+					<textFieldExpression><![CDATA[$F{tabel_pemesanan_sisa}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7b5cf1de-f0b4-46a3-ac2c-48cb7289342b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="d9fc3809-76ad-4856-bc05-d0e222267ae3"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="a20b739a-a63f-475a-83cc-82d4ee59cdfe"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="94938636-2d9c-4c11-b677-8da8d9d8338a"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="71033f95-2908-4ada-bdc4-591505e8fe4b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
